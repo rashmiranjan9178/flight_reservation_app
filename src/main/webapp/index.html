@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<style type="text/css">
+body {
+    background: #000;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+}
+
+.circular-image {
+    display: block;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-right: 20px;
+    position: relative;
+    z-index: 2;
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #0ef;
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    transition: box-shadow 0.3s ease;
+    margin-right: 10px;
+    position: relative;
+    z-index: 2;
+}
+
+.button:hover {
+    box-shadow: 0 0 10px #0ef, 0 0 40px #0ef, 0 0 80px #0ef;
+}
+
+@keyframes snowfall {
+    0% {
+        transform: translateY(-100vh) translateX(calc(50vw - 50%));
+    }
+    100% {
+        transform: translateY(100vh) translateX(calc(50vw - 50%));
+    }
+}
+
+@keyframes snowfall-flakes {
+    0% {
+        transform: translateY(-100vh) translateX(calc(50vw - 50%));
+    }
+    100% {
+        transform: translateY(100vh) translateX(calc(50vw - 50%));
+    }
+}
+
+.container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    animation: snowfall 20s linear infinite;
+    background: transparent;
+    overflow: hidden;
+}
+
+.container::after {
+    content: "";
+    position: absolute;
+    top: -100%;
+    left: -100%;
+    width: 300%;
+    height: 300%;
+    pointer-events: none;
+    animation: snowfall-flakes 20s linear infinite;
+    background: transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20'%3E%3Ccircle cx='10' cy='10' r='2' fill='white'/%3E%3C/svg%3E") repeat scroll 0 0;
+}
+
+.container::after {
+    animation-delay: -1s, -2s, -3s, -4s, -5s;
+}
+
+.container::before {
+    animation-delay: -1s, -2s, -3s, -4s, -5s;
+}
+
+.container::after:nth-child(1) {
+    animation-duration: 30s;
+    animation-delay: -2s, -4s, -6s, -8s, -10s;
+}
+
+.container::before:nth-child(1) {
+    animation-duration: 30s;
+    animation-delay: -2s, -4s, -6s, -8s, -10s;
+}
+
+.container::after:nth-child(2) {
+    animation-duration: 25s;
+    animation-delay: -3s, -6s, -9s, -12s, -15s;
+}
+
+.container::before:nth-child(2) {
+    animation-duration: 25s;
+    animation-delay: -3s, -6s, -9s, -12s, -15s;
+}
+
+.container::after:nth-child(3) {
+    animation-duration: 22s;
+    animation-delay: -4s, -8s, -12s, -16s, -20s;
+}
+
+.container::before:nth-child(3) {
+    animation-duration: 22s;
+    animation-delay: -4s, -8s, -12s, -16s, -20s;
+}
+
+.container::after:nth-child(4) {
+    animation-duration: 28s;
+    animation-delay: -5s, -10s, -15s, -20s, -25s;
+}
+
+.container::before:nth-child(4) {
+    animation-duration: 28s;
+    animation-delay: -5s, -10s, -15s, -20s, -25s;
+}
+
+.container::after:nth-child(5) {
+    animation-duration: 26s;
+    animation-delay: -6s, -12s, -18s, -24s, -30s;
+}
+
+.container::before:nth-child(5) {
+    animation-duration: 26s;
+    animation-delay: -6s, -12s, -18s, -24s, -30s;
+}
+
+.container::after:nth-child(6) {
+    animation-duration: 23s;
+    animation-delay: -7s, -14s, -21s, -28s, -35s;
+}
+
+.container::before:nth-child(6) {
+    animation-duration: 23s;
+    animation-delay: -7s, -14s, -21s, -28s, -35s;
+}
+
+
+
+</style>
+
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+    <div class="container">
+        <img class="circular-image" alt="default" src="flight2.jpg">
+        <a class="button" href="showReg">Click to register</a>
+        <a class="button" href="showLogin">Click to login</a>
+    </div>
+</body>
+</html>
